@@ -48,6 +48,7 @@
     display: block;
 }
 
+
     </style>
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
@@ -69,14 +70,7 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="dropdown01"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Dropdown</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
+      
      <div class="dropdown">
   <h6 style="color:white; margin-top: 10px;">Mouse over me</h6>
   <div class="dropdown-content">
@@ -85,18 +79,19 @@
   </div>
 </div>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    <form class="form-inline my-2 my-lg-0" method="POST">
+      <input class="form-control mr-sm-2" type="text"  id="myinput" placeholder="Search" aria-label="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" onclick="search(myinput.value);"type="submit">Search</button>
     </form>
   </div>
 </nav>
 
 </header>
 	
-
-
-
+<div id="video_go">	
+<h1>Video</h1>
+</div>
+<h1 id="videomine" style="color: red;">Video</h1>
 
 
 <?php 
@@ -105,5 +100,19 @@
 
 ?>
 
+<script type="text/javascript">
+
+	var input = document.getElementById("myinput");
+	var video = document.getElementById("videomine");
+	function search(addr) {
+        window.location.assign(addr);
+		if (input.value == "Skynotepad" || "notepad") {
+                
+             window.location.assign("upload.php");
+		}
+	}
+
+
+</script>
 </body>
 </html>
